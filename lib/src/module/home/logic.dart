@@ -18,7 +18,6 @@ class HomeLogic extends GetxController {
   final HomeState state = HomeState();
   final TodoLocal _todoLocal = Get.find<TodoLocal>();
 
-
   @override
   Future<void> onReady() async {
     super.onReady();
@@ -40,6 +39,7 @@ class HomeLogic extends GetxController {
       //endregion
     } else if (mode == ModeEnum.Update) {
       state.modeTodo = mode;
+      todoItem.updatedDate = DateTime.now();
     }
     update();
 
