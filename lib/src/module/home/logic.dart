@@ -18,11 +18,14 @@ class HomeLogic extends GetxController {
   final HomeState state = HomeState();
   final TodoLocal _todoLocal = Get.find<TodoLocal>();
 
+
   @override
-  Future<void> onInit() async {
-    super.onInit();
+  Future<void> onReady() async {
+    super.onReady();
+    showLoading();
     await 1.delay();
     await onRefresh();
+    Get.back();
   }
 
   openTodoBottomSheet(
@@ -129,6 +132,7 @@ class HomeLogic extends GetxController {
       if (state.isDesc.value == true) {
         state.todoList = state.todoList.reversed.toList();
       }
+      state.todoList.sort((a, b) => b.isPriority == true ? 1 : -1);
       update();
     } catch (e) {
       await showError();

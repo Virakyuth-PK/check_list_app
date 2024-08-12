@@ -32,6 +32,7 @@ class HomePage extends StatelessWidget {
         toolbarHeight: 0,
       ),
       floatingActionButton: FloatingActionButton.small(
+        shape: const CircleBorder(),
         key: const Key('updateLocale'),
         onPressed: () {
           if (Get.locale?.languageCode == AppConst.khmerCode) {
@@ -44,7 +45,7 @@ class HomePage extends StatelessWidget {
           Get.locale?.languageCode == AppConst.khmerCode
               ? FlagsCode.KH
               : FlagsCode.US,
-          borderRadius: 10..d,
+          borderRadius: 30.0.d,
           fit: BoxFit.fitWidth,
           flagSize: FlagSize.size_1x1,
         ),
@@ -87,7 +88,7 @@ class HomePage extends StatelessWidget {
                                   right: 20..d,
                                 ),
                                 child: XButton(
-                                  key: const Key('newTodo'),
+                                    key: const Key('newTodo'),
                                     onPress: () => logic.openTodoBottomSheet(
                                           mode: ModeEnum.Create,
                                           todoItem: TodoModel(),
@@ -146,14 +147,6 @@ class HomePage extends StatelessWidget {
                                                           : Colors.grey),
                                             ),
                                           )),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            vertical: 8.0.d),
-                                        child: VerticalDivider(
-                                          color: primaryColor,
-                                          thickness: 20,
-                                        ),
-                                      ),
                                       XButton(
                                           onPress: () async {
                                             state.statusTodo.value =
@@ -295,9 +288,11 @@ class HomePage extends StatelessWidget {
                           itemCount: state.todoList.length,
                           itemBuilder: (context, index) =>
                               TodoItemWidget(item: state.todoList[index]),
-                          separatorBuilder: (context, index) => spaceV(),
+                          separatorBuilder: (context, index) =>
+                          spaceV(),
                         ),
-                      )
+                      ),
+                      SliverToBoxAdapter(child: spaceV(size: 60.0.d)),
                     ] else ...[
                       SliverToBoxAdapter(
                         child: SizedBox(

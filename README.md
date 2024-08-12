@@ -1,16 +1,14 @@
-# check_list_app
+# Checklist App
 
-A new Flutter project.
+## Overview
+The Checklist App is a simple yet powerful tool that helps users manage their tasks efficiently. With features such as creating, editing, deleting, and prioritizing tasks, this app aims to improve productivity by keeping track of to-do items and providing a clear overview of progress through a personal dashboard.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Create To-Do Items:** Easily add new tasks to your checklist.
+- **Edit To-Do Items:** Modify existing tasks to reflect any changes.
+- **Delete To-Do Items:** Remove tasks that are no longer needed.
+- **Set Priorities:** Assign priority levels to tasks to help manage what’s important.
+- **Sortable List:** Organize tasks by priority, deadline, or custom order.
+- **Mark as Completed:** Check off tasks as they are completed to track your progress.
+- **Personal Dashboard:** Visualize your progress with a graphical dashboard that summarizes completed and pending tasks.

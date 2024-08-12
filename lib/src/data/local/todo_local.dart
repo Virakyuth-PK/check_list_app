@@ -34,17 +34,17 @@ class TodoLocal {
       }
       List<TodoModel> dataLocal = await getData();
       var existedItem =
-          dataLocal.firstWhereOrNull((element) => element.title == data.title);
+          dataLocal.firstWhereOrNull((element) => element.createdDate == data.createdDate);
       if (existedItem == null) {
         await box.add(data);
       } else {
         var index =
-            dataLocal.indexWhere((element) => element.title == data.title);
+            dataLocal.indexWhere((element) => element.createdDate == data.createdDate);
         await box.putAt(index, data);
       }
       var resultLocal = await getData();
       return resultLocal.firstWhereOrNull(
-        (element) => element.title == data.title,
+        (element) => element.createdDate == data.createdDate,
       );
     } catch (e) {
       xPrettyLog(message: "setData() : $e");
@@ -60,10 +60,10 @@ class TodoLocal {
       }
       List<TodoModel> dataLocal = await getData();
       var existedItem =
-          dataLocal.firstWhereOrNull((element) => element.title == data.title);
+          dataLocal.firstWhereOrNull((element) => element.createdDate == data.createdDate);
       if (existedItem != null) {
         var index =
-            dataLocal.indexWhere((element) => element.title == data.title);
+            dataLocal.indexWhere((element) => element.createdDate == data.createdDate);
         await box.deleteAt(index);
       }
       return true;
