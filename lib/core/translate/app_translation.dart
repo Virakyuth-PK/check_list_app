@@ -10,6 +10,7 @@ class AppTranslation extends Translations {
         AppLocale.home: "ទំព័រដំបូង",
         AppLocale.todoList: "បញ្ជីការងារត្រូវធ្វើ",
         AppLocale.newTodo: "កិច្ចការថ្មី",
+        AppLocale.editTodo: "កែសម្រួលកិច្ចការ",
         AppLocale.title: "ចំណងជើង",
         AppLocale.description: "ការពិពណ៌នា",
         AppLocale.priorityLevel: "កម្រិតអាទិភាព",
