@@ -288,8 +288,7 @@ class HomePage extends StatelessWidget {
                           itemCount: state.todoList.length,
                           itemBuilder: (context, index) =>
                               TodoItemWidget(item: state.todoList[index]),
-                          separatorBuilder: (context, index) =>
-                          spaceV(),
+                          separatorBuilder: (context, index) => spaceV(),
                         ),
                       ),
                       SliverToBoxAdapter(child: spaceV(size: 60.0.d)),
@@ -471,6 +470,7 @@ class TodoModalBottomSheet extends StatelessWidget {
                   Row(children: [
                     XButton(
                       enable: enable,
+                      key: const ValueKey("isCompleted"),
                       onPress: () {
                         todoItem?.isCompleted =
                             !(todoItem?.isCompleted ?? false);
@@ -506,6 +506,7 @@ class TodoModalBottomSheet extends StatelessWidget {
                   Row(
                     children: [
                       XButton(
+                        key: const ValueKey("isPriority"),
                         enable: enable,
                         onPress: () {
                           todoItem?.isPriority =
@@ -527,6 +528,7 @@ class TodoModalBottomSheet extends StatelessWidget {
                           children: [
                             spaceH(),
                             XButton(
+                              key: const ValueKey("deleteTodo"),
                               onPress: () async =>
                                   await logic.deleteTodo(todoItem!),
                               child: Icon(
@@ -547,6 +549,7 @@ class TodoModalBottomSheet extends StatelessWidget {
                 require: true,
                 child: XTextField(
                   enable: enable,
+                  key: const ValueKey("title"),
                   onChanged: (value) => todoItem?.title = value,
                   initialValue: todoItem?.title,
                   hintText: AppLocale.title.tr,
@@ -560,6 +563,7 @@ class TodoModalBottomSheet extends StatelessWidget {
                 label: AppLocale.description.tr,
                 child: XTextField(
                   enable: enable,
+                  key: const ValueKey("description"),
                   onChanged: (value) => todoItem?.description = value,
                   initialValue: todoItem?.description,
                   hintText: AppLocale.description.tr,
@@ -570,6 +574,7 @@ class TodoModalBottomSheet extends StatelessWidget {
               ),
               const Spacer(),
               XButton(
+                key: const ValueKey("insertTodoButton"),
                 enable: enable,
                 onPress: () async => await logic.insertTodo(todoItem!),
                 child: Container(
